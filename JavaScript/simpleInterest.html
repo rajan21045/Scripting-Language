@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest</title>
+</head>
+
+<body>
+    <fieldset style="width: 400px; margin: auto; padding: 20px;">
+        <legend>Simple Interest Calculator</legend>
+        <form>
+            <label for="principal">Principal Amount: </label>
+            <input type="number" id="principal" required>
+
+            <br><br>
+            <label for="rate">Rate of Interest (%): </label>
+            <input type="number" id="rate" required>
+            <br><br>
+            <label for="time">Time (in years): </label>
+            <input type="number" id="time" required>
+            <br><br>
+            <input type="button" value="Calculate Interest" onclick="calculateInterest()">
+            <br><br>
+            <label for="interestDisplay">Simple Interest: </label>
+            <input type="text" id="interestDisplay" readonly>
+        </form>
+    </fieldset>
+
+
+    <script>
+        function calculateInterest() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const time = parseFloat(document.getElementById('time').value);
+            if (isNaN(principal) || isNaN(rate) || isNaN(time)) {
+                alert("Please enter valid numbers for all fields");
+                return;
+            }
+            const interest = (principal * rate * time) / 100;
+            document.getElementById('interestDisplay').value = interest.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

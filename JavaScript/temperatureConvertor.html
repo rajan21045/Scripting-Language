@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="width: 400px; margin: auto; padding: 20px;">
+        <legend>Temperature Converter</legend>
+        <form>
+            <label for="tempInput">Temperature: </label>
+            <input type="number" id="tempInput" required>
+
+            <br><br>
+            <input type="radio" name="conversionType" value="cToF" id="cToF" checked>
+            <label for="cToF">Celsius to Fahrenheit</label>
+            &nbsp;
+            <input type="radio" name="conversionType" value="fToC" id="fToC">
+            <label for="fToC">Fahrenheit to Celsius</label>
+
+            <br><br>
+            <input type="button" value="Convert" onclick="convertTemperature()">
+
+            <br><br>
+            <label for="resultDisplay">Result: </label>
+            <input type="text" id="resultDisplay" readonly>
+        </form>
+    </fieldset>
+
+    <script>
+
+        function convertTemperature() {
+            const tempInput = parseFloat(document.getElementById('tempInput').value);
+            if (isNaN(tempInput)) {
+                alert("Please enter a valid temperature");
+                return;
+            }
+
+            let resultValue;
+
+            if (document.getElementById('cToF').checked) {
+                resultValue = (tempInput * 9/5) + 32; // Celsius to Fahrenheit
+            } else if (document.getElementById('fToC').checked) {
+                resultValue = (tempInput - 32) * 5/9; // Fahrenheit to Celsius
+            } else {
+                alert("Please select a conversion type");
+                return;
+            }
+
+            document.getElementById('resultDisplay').value = resultValue.toFixed(2);
+        }   
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Find The Area</title>
+</head>
+
+<body>
+    <fieldset style="width: 400px; margin: auto; padding: 20px;">
+        <legend>Area Calculator</legend>
+        <form onsubmit="return false;">
+            <label for="length">Length: </label>
+            <input type="number" id="length" required>
+
+            <br><br>
+            <label for="width">Breadth: </label>
+            <input type="number" id="breadth" required>
+
+            <br><br>
+            <label for="width">Height: </label>
+            <input type="number" id="height" required>
+
+            <br><br>
+            <input type="button" id="rect" value="Area of Rectangle" onclick="calculateArea('rect')">
+            <input type="button" id="cuboid" value="Area of Cuboid" onclick="calculateArea('cuboid')">
+
+            <br><br>
+            <label for="areaDisplay">Area: </label>
+            <input type="text" id="areaDisplay" readonly>
+        </form>
+    </fieldset>
+
+    <script>
+            function calculateArea(type) {
+                const length = parseFloat(document.getElementById('length').value);
+                const breadth = parseFloat(document.getElementById('breadth').value);
+                const height = parseFloat(document.getElementById('height').value);
+    
+                if (isNaN(length) || isNaN(breadth) || isNaN(height)) {
+                    alert("Please enter valid numbers for all fields");
+                    return;
+                }
+                if (type === 'rect') {
+                    const area = length * breadth;
+                    document.getElementById('areaDisplay').value = area;
+                }
+                else if (type === 'cuboid') {
+                    const area = 2 * (length * breadth + breadth * height + height * length);
+                    document.getElementById('areaDisplay').value = area;
+                } else {
+                    alert("Please select a valid operation");
+                    return;
+                }
+            }
+        </script>
+</body>
+
+</html>
