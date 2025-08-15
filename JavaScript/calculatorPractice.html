@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+    body {
+        background: #f4f4f4;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .calculator {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        width: 260px;
+    }
+
+     #display {
+        width: 100vw;
+        max-width: 100%;
+        box-sizing: border-box;
+        height: 35px; /* reduced height */
+        font-size: 1.2em; /* slightly smaller text */
+        text-align: right;
+        padding: 5px 8px;
+        border-radius: 8px;
+        border: 1px solid #bbb;
+        background: #f9f9f9;
+        margin-bottom: 10px;
+    }
+
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 1.1em;
+        border-radius: 8px;
+        border: 1px solid #bbb;
+        background: #eaeaea;
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+        background: #d4e3fc;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    /* Special buttons */
+    .operator {
+        background: #2196f3;
+        color: #fff;
+    }
+    .operator:hover {
+        background: #1565c0;
+    }
+    .equal {
+        background: #4caf50;
+        color: white;
+        font-weight: bold;
+    }
+    .equal:hover {
+        background: #388e3c;
+    }
+    .clear {
+        background: #f44336;
+        color: white;
+    }
+    .clear:hover {
+        background: #b71c1c;
+    }
+    .zero {
+        grid-column: span 2;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="display" >
+    <div class="buttons">
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button class="clear" onclick="clearEntry()">CE</button>
+        <button class="operator" onclick="operator('%')">%</button>
+        <button class="operator" onclick="operator('/')">/</button>
+
+        <button onclick="num(7)">7</button>
+        <button onclick="num(8)">8</button>
+        <button onclick="num(9)">9</button>
+        <button class="operator" onclick="operator('*')">*</button>
+
+        <button onclick="num(4)">4</button>
+        <button onclick="num(5)">5</button>
+        <button onclick="num(6)">6</button>
+        <button class="operator" onclick="operator('-')">-</button>
+
+        <button onclick="num(1)">1</button>
+        <button onclick="num(2)">2</button>
+        <button onclick="num(3)">3</button>
+        <button class="operator" onclick="operator('+')">+</button>
+
+        <button class="zero" onclick="num(0)">0</button>
+        <button onclick="dot('.')">.</button>
+        <button class="equal" onclick="equal('=')">=</button>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById('display');
+
+    function num(n) {
+        display.value += n;
+    }
+    function operator(op) {
+        display.value += op;
+    }
+    function dot(d) {
+        if (!display.value.includes('.')) {
+            display.value += d;
+        }
+    }
+    function clearDisplay() {
+        display.value = '';
+    }
+    function clearEntry() {
+        display.value = display.value.slice(0, -1);
+    }
+    function equal() {
+        try {
+            display.value = eval(display.value);
+        } catch {
+            display.value = 'Error';
+        }
+    }
+</script>
+
+</body>
+</html>
