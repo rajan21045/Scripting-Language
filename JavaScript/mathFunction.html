@@ -13,12 +13,21 @@
     <p>Power of 4 by 3</p>
     <p id="demo1"></p>
 
+    <p>Random Value Between 10 and 100 Is</p>
+    <p id="demo2"></p>
+
     <script>    
         let a = Math.max(10, 39, 100, 95);
         document.getElementById("demo").innerHTML = a;
 
         let b = Math.pow(4, 3);
         document.getElementById("demo1").innerHTML = b;
+
+        let min = 10;
+        let max = 100;
+        // Generate a random integer between 10 and 100 (inclusive)
+        let c = Math.floor(Math.random() * (max - min + 1)) + min;
+        document.getElementById("demo2").innerHTML = c;
     </script>
 </body>
 </html>
