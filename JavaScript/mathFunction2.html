@@ -5,9 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        form{
+            margin: 20px;
+            border: 4px solid black;
+            padding: 20px;
+            width: 500px;
+            font-family: poppins;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
+    <form>
     <label for="number">Enter A Number: </label>
     <input type="number" id="num1" name="num1">
     <br> <br>
@@ -24,7 +35,7 @@
     <button type="button" id="tan" name="tan" onclick="tan()">Tan</button>&nbsp;&nbsp;
     <button type="button" id="max" name="max" onclick="maxValue()">Max</button>&nbsp;&nbsp;
 
-
+</form>
     <script>
         function abs() {
             let c = document.getElementById("num1").value;
