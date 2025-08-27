@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="number">Enter A Number: </label>
+    <input type="number" id="num1" name="num1">
+    <br> <br>
+    <button type="button" id="abs" name="abs" onclick="abs()">Abs</button> &nbsp;&nbsp;
+    <button type="button" id="sqrt" name="sqrt" onclick="sqrt()">Sqrt</button>&nbsp;&nbsp;
+    <button type="button" id="cqrt" name="cqrt" onclick="cqrt()">Cqrt</button>&nbsp;&nbsp;
+    <button type="button" id="ceiling" name="ceiling" onclick="ceiling()">Ceiling</button>&nbsp;&nbsp;
+    <button type="button" id="floor" name="floor" onclick="floor()">Floor</button>&nbsp;&nbsp;
+    <button type="button" id="round" name="round" onclick="round()">Round</button>&nbsp;&nbsp;
+    <button type="button" id="random" name="random" onclick="random()">Random</button>&nbsp;&nbsp;
+    <br><br>
+    <button type="button" id="sin" name="sin" onclick="sin()">Sin</button>&nbsp;&nbsp;
+    <button type="button" id="cos" name="cos" onclick="cos()">Cos</button>&nbsp;&nbsp;
+    <button type="button" id="tan" name="tan" onclick="tan()">Tan</button>&nbsp;&nbsp;
+    <button type="button" id="max" name="max" onclick="maxValue()">Max</button>&nbsp;&nbsp;
+    
+
+    <script>
+        function abs(){
+            let c = document.getElementById("num1").value;
+            alert(Math.abs(c));
+        }
+    </script>
+</body>
+
+</html>
