@@ -23,12 +23,66 @@
     <button type="button" id="cos" name="cos" onclick="cos()">Cos</button>&nbsp;&nbsp;
     <button type="button" id="tan" name="tan" onclick="tan()">Tan</button>&nbsp;&nbsp;
     <button type="button" id="max" name="max" onclick="maxValue()">Max</button>&nbsp;&nbsp;
-    
+
 
     <script>
-        function abs(){
+        function abs() {
             let c = document.getElementById("num1").value;
             alert(Math.abs(c));
+        }
+        function sqrt() {
+            let c = document.getElementById("num1").value;
+            alert(Math.sqrt(c));
+        }
+
+        function cqrt() {
+            let c = document.getElementById("num1").value;
+            alert(Math.cqrt(c));
+        }
+
+         function ceiling(){
+            let c = document.getElementById("num1").value;
+            alert(Math.ceil(c));
+        }
+
+         function sqrt(){
+            let c = document.getElementById("num1").value;
+            alert(Math.sqrt(c));
+        }
+
+         function floor(){
+            let c = document.getElementById("num1").value;
+            alert(Math.floor(c));
+        }
+
+         function round(){
+            let c = document.getElementById("num1").value;
+            alert(Math.round(c));
+        }
+
+         function random(){
+            alert(Math.random());
+        }
+
+         function sin(){
+            let c = document.getElementById("num1").value;
+            alert(Math.sin(c));
+        }
+
+         function cos(){
+            let c = document.getElementById("num1").value;
+            alert(Math.cos(c));
+        }
+
+         function tan(){
+            let c = document.getElementById("num1").value;
+            alert(Math.tan(c));
+        }
+
+         function maxValue(){
+            let c = document.getElementById("num1").value;
+            let d = prompt("Enter Second Number: ");
+            alert(Math.max(c,d));
         }
     </script>
 </body>
