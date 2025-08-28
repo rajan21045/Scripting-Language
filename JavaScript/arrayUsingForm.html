@@ -1,32 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
 </head>
+
 <body>
     <form action="">
         <h3>Array Using Form</h3>
         <label for="name">Enter The String: </label>
         <input type="text" id="nameString" name="nameString">
         <br> <br>
-        <button type="button" id="push" value="push" >Pushing To Array</button>
-        <button type="button" id="pop" value="pop">Pop To Array</button>
-        <button type="button" id="shift" value="shift">Shift To Array</button>
-        <button type="button" id="unshift" value="unshift">Unshift To Array</button>
+        <button type="button" id="push" value="push" onclick="fun(this.value)">Pushing To Array</button>
+        <button type="button" id="pop" value="pop" onclick="fun(this.value)">Pop To Array</button>
+        <button type="button" id="shift" value="shift" onclick="fun(this.value)">Shift To Array</button>
+        <button type="button" id="unshift" value="unshift" onclick="fun(this.value)">Unshift To Array</button>
         <br> <br>
-        <button type="button" id="sort" value="sort">Sort The Array</button>
-        <button type="button" id="length" value="length">Length Of The Array</button>
+        <button type="button" id="sort" value="sort" onclick="fun(this.value)">Sort The Array</button>
+        <button type="button" id="length" value="length" onclick="fun(this.value)">Length Of The Array</button>
         <br> <br>
         <textarea name="result" id="result" rows="5" cols="20"></textarea>
     </form>
 
     <script>
+        const arr = [];
+        function fun() {
 
+            let val = document.getElementById("nameString").value;
+            let res = document.getElementById("value").value;
+            if (val == " ") {
+                alert("Please Enter The String");
+            } else {
+                switch (res) {
+                    case "push":
+                        let push = arr.push(val);
+                        document.getElementById("result").innerHTML = push;
+                        break;
+                    case "pop":
+                        let pop = arr.pop();
+                        document.getElementById("result").innerHTML = pop;
+                        break;
+                    case "shift":
+                        let shift = arr.shift();
+                        document.getElementById("result").innerHTML = shift;
+                        break;
+                    case "unshift":
+                        let unshift = arr.unshift(val);
+                        document.getElementById("result").innerHTML = unshift;
+                        break;
+                        case "sort":
+                        let sort = arr.sort();
+                        document.getElementById("result").innerHTML = sort;
+                        break;
+                        case "length":
+                        let length = arr.length;
+                        document.getElementById("result").innerHTML = length;
+                        break;
+                    default:
+                        alert("Please Enter The Valid String");
+                        break;
+                }
+            }
+        }
 
 
 
     </script>
 </body>
+
 </html>
