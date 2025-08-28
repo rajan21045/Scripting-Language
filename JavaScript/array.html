@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <p>Sorted Array Is: </p>
@@ -15,13 +17,21 @@
 
     <p>Pushing Pineapple Into Array: </p>
     <p id="push"></p>
+
+    <p>Pushing Kiwi Into Array: </p>
+    <p id="pushh"></p>
+
+    <p>Poping</p>
+
     <script>
         const fruits = ["Banana", "Orange", "Apple", "Mango"];
         let sortFruit = fruits.sort();
         document.getElementById("demo").innerHTML = sortFruit;
         document.getElementById("len").innerHTML = fruits.length;
         document.getElementById("push").innerHTML = fruits.push("Pineapple");
+        document.getElementById("pushh").innerHTML = fruits.push("Kiwi");
     </script>
 
 </body>
+
 </html>
