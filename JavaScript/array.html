@@ -6,12 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <p class="demo"></p>
+    <p>Sorted Array Is: </p>
+    <p id="demo"></p>
+    <p>Length of the Array: </p>
+    <p id="len"></p>
     <script>
         const fruits = ["Banana", "Orange", "Apple", "Mango"];
-        let sortFruits = fruits.sort();
-        document.getElementById("demo").innerHTML = sortFruits;
+        let sortFruit = fruits.sort();
+        document.getElementById("demo").innerHTML = sortFruit;
+        document.getElementById("len").innerHTML = fruits.length;
     </script>
 </body>
 </html>
