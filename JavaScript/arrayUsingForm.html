@@ -20,49 +20,53 @@
         <br> <br>
         <button type="button" id="sort" value="sort" onclick="fun(this.value)">Sort The Array</button>
         <button type="button" id="length" value="length" onclick="fun(this.value)">Length Of The Array</button>
+        <button type="button" id="result" value="result" onclick="fun(this.value)">Result</button>
         <br> <br>
-        <textarea name="result" id="result" rows="5" cols="20"></textarea>
+        <p id="resu"></p>
     </form>
 
     <script>
         const arr = [];
-        function fun() {
-
+        function fun(res) {
             let val = document.getElementById("nameString").value;
-            let res = document.getElementById("value").value;
-            if (val == " ") {
+            // Only require input for push/unshift
+            if ((res === "push" || res === "unshift") && val.trim() === "") {
                 alert("Please Enter The String");
-            } else {
-                switch (res) {
-                    case "push":
-                        let push = arr.push(val);
-                        document.getElementById("result").innerHTML = push;
-                        break;
-                    case "pop":
-                        let pop = arr.pop();
-                        document.getElementById("result").innerHTML = pop;
-                        break;
-                    case "shift":
-                        let shift = arr.shift();
-                        document.getElementById("result").innerHTML = shift;
-                        break;
-                    case "unshift":
-                        let unshift = arr.unshift(val);
-                        document.getElementById("result").innerHTML = unshift;
-                        break;
-                        case "sort":
-                        let sort = arr.sort();
-                        document.getElementById("result").innerHTML = sort;
-                        break;
-                        case "length":
-                        let length = arr.length;
-                        document.getElementById("result").innerHTML = length;
-                        break;
-                    default:
-                        alert("Please Enter The Valid String");
-                        break;
-                }
+                return;
             }
+            let output = "";
+            switch (res) {
+                case "push":
+                    arr.push(val);
+                    output = "String Pushed Successfully: " + arr.join(", ");
+                    break;
+                case "pop":
+                    let pop = arr.pop();
+                    output = "Popped: " + (pop !== undefined ? pop : "Array is empty") + "<br>Array: " + arr.join(", ");
+                    break;
+                case "shift":
+                    let shift = arr.shift();
+                    output = "Shifted: " + (shift !== undefined ? shift : "Array is empty") + "<br>Array: " + arr.join(", ");
+                    break;
+                case "unshift":
+                    arr.unshift(val);
+                    output = "String Unshifted Successfully: " + arr.join(", ");
+                    break;
+                case "sort":
+                    arr.sort();
+                    output = "Array Sorted: " + arr.join(", ");
+                    break;
+                case "length":
+                    output = "Length of Array: " + arr.length;
+                    break;
+                case "result":
+                    output = "Array: " + arr.join(", ");
+                    break;
+                default:
+                    output = "Please Enter The Valid String";
+                    break;
+            }
+            document.getElementById("resu").innerHTML = output;
         }
 
 
