@@ -11,18 +11,24 @@
 
     <p>Sorted Array Is: </p>
     <p id="demo"></p>
-
+    <br>
     <p>Length of the Array: </p>
     <p id="len"></p>
-
+    <br>
     <p>Pushing Pineapple Into Array: </p>
     <p id="push"></p>
-
+    <br>
     <p>Pushing Kiwi Into Array: </p>
     <p id="pushh"></p>
-
+    <br>
     <p>Poping The Array Element</p>
     <p id="pop"></p>
+    <br>
+    <p>Shifting The Element In The Array.</p>
+    <p>( The shift() method removes the first array element and "shifts" all other elements to a lower index. )</p>
+    <p id="shift"></p>
+
+
     <script>
         const fruits = ["Banana", "Orange", "Apple", "Mango"];
         let sortFruit = fruits.sort();
@@ -31,6 +37,7 @@
         document.getElementById("push").innerHTML = fruits.push("Pineapple");
         document.getElementById("pushh").innerHTML = fruits.push("Kiwi");
         document.getElementById("pop").innerHTML = fruits.pop();
+        document.getElementById("shift").innerHTML = fruits.shift();
 
     </script>
 
