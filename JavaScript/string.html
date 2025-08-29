@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String</title>
 </head>
-<p id="len"></p>
-<p id="txt"></p>
-<body>
 
+<body>
+    <p id="len"></p>
+    <p id="txt"></p>
+    <b><p id="mth"></p></b>
 
     <script>
         let answer1 = "It's alright";
@@ -22,7 +23,9 @@
         let lengths = answer1.length;
         document.getElementById("len").innerHTML = "Length of answer1: " + lengths;
 
-        document.getElementById("txt").innerHTML= str;
+        document.getElementById("txt").innerHTML = str;
+
+        document.getElementById("mth").innerHTML = answer1.charAt(3);
     </script>
 </body>
 
