@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>String</title>
 </head>
+<p id="len"></p>
+<p id="txt"></p>
 <body>
-    
+
+
+    <script>
+        let answer1 = "It's alright";
+        let answer2 = "He is called 'Johnny'";
+        let answer3 = 'He is called "Johnny"';
+        let str = "I Am \"BATMAN\" Fan";
+
+        let x = "John";
+        let y = new String("John");
+        let lengths = answer1.length;
+        document.getElementById("len").innerHTML = "Length of answer1: " + lengths;
+
+        document.getElementById("txt").innerHTML= str;
+    </script>
 </body>
+
 </html>
