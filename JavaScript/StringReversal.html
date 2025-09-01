@@ -1,0 +1,49 @@
+<!-- Create a function that takes a string and returns a new string with its characters in reverse order. 
+ For example, reverseString("hello") should return "olleh". -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Reverse</title>
+    <style>
+        #ff{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: poppins, sans-serif;
+            margin-top: 200px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="ff">
+        <fieldset style="width: 400px; height: 120px;">
+            <form action="">
+                <label for="str">Enter The String: </label> &nbsp;
+                <input type="text" name="str" id="str" placeholder="Enter The Strng To Reverse" size="30">
+                <br><br>
+                <input type="text" name="result" id="result" readonly> <br> <br>
+                <button type="button" id="res" value="res" onclick="reverseString()">Result</button>
+
+            </form>
+        </fieldset>
+    </div>
+</body>
+<script>
+
+    function reverseString() {
+        let txt = document.getElementById("str").value;
+        let split = txt.split('');
+        let rev = split.reverse();
+        let jo = rev.join('');
+
+        document.getElementById("result").value = jo;
+    }
+</script>
+
+</html>
