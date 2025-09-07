@@ -16,6 +16,7 @@
     <p>The At 2 Of String "Hello, I Am Rajan Poudel" Is <span id="demo3"></span></p>
     <p>The Concat Of String "Hello, I Am Rajan Poudel" With " and I am from Nepal" Is <span id="demo4"></span></p>
     <p>The Substring Of String "Apple, Banana, Kiwi" From 7 To 13 Is <span id="demo5"></span></p>
+    <p>The Substr Of String "Apple, Banana, Kiwi" From -4 Is <span id="demo6"></span></p>
 
 </body>
 
@@ -31,6 +32,10 @@
     let str1 = "Apple, Banana, Kiwi";
     let part = str1.substring(7, 13);
     document.getElementById("demo5").innerHTML = part;
+
+    let str2 = "Apple, Banana, Kiwi";
+    let part2 = str.substr(-4);
+    document.getElementById("demo6").innerHTML = part2;
 
 </script>
 
