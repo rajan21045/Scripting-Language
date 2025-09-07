@@ -15,6 +15,7 @@
     <p>The Char Code At 7 Of String "Hello, I Am Rajan Poudel" Is <span id="demo2"></span></p>
     <p>The At 2 Of String "Hello, I Am Rajan Poudel" Is <span id="demo3"></span></p>
     <p>The Concat Of String "Hello, I Am Rajan Poudel" With " and I am from Nepal" Is <span id="demo4"></span></p>
+    <p>The Substring Of String "Apple, Banana, Kiwi" From 7 To 13 Is <span id="demo5"></span></p>
 
 </body>
 
@@ -26,6 +27,11 @@
     document.getElementById("demo2").innerHTML = str.charCodeAt(7);
     document.getElementById("demo3").innerHTML = str.at(2);
     document.getElementById("demo4").innerHTML = str.concat(" and I am from Nepal");
+
+    let str1 = "Apple, Banana, Kiwi";
+    let part = str1.substring(7, 13);
+    document.getElementById("demo5").innerHTML = part;
+
 </script>
 
 </html>
