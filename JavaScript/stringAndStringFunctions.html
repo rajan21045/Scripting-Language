@@ -13,6 +13,8 @@
     <p>The length of the string is: <span id="length"></span></p>
     <p>The Char At 7 Of String "Hello, I Am Rajan Poudel" Is <span id="demo1"></span></p>
     <p>The Char Code At 7 Of String "Hello, I Am Rajan Poudel" Is <span id="demo2"></span></p>
+    <p>The At 2 Of String "Hello, I Am Rajan Poudel" Is <span id="demo3"></span></p>
+    <p>The Concat Of String "Hello, I Am Rajan Poudel" With " and I am from Nepal" Is <span id="demo4"></span></p>
 
 </body>
 
@@ -22,6 +24,8 @@
     document.getElementById("length").innerHTML = len;
     document.getElementById("demo1").innerHTML = str.charAt(7);
     document.getElementById("demo2").innerHTML = str.charCodeAt(7);
+    document.getElementById("demo3").innerHTML = str.at(2);
+    document.getElementById("demo4").innerHTML = str.concat(" and I am from Nepal");
 </script>
 
 </html>
