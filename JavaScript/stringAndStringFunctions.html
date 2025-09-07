@@ -17,6 +17,7 @@
     <p>The Concat Of String "Hello, I Am Rajan Poudel" With " and I am from Nepal" Is <span id="demo4"></span></p>
     <p>The Substring Of String "Apple, Banana, Kiwi" From 7 To 13 Is <span id="demo5"></span></p>
     <p>The Substr Of String "Apple, Banana, Kiwi" From -4 Is <span id="demo6"></span></p>
+    <p>The Slice Of String "Please visit Microsoft!" From 7 To 16 Is <span id="demo7"></span></p>
 
 </body>
 
@@ -24,7 +25,7 @@
     let str = document.getElementById("demo").innerHTML;
     let len = str.length;
     document.getElementById("length").innerHTML = len;
-    
+
     document.getElementById("demo1").innerHTML = str.charAt(7);
     document.getElementById("demo2").innerHTML = str.charCodeAt(7);
     document.getElementById("demo3").innerHTML = str.at(2);
@@ -37,6 +38,10 @@
     let str2 = "Apple, Banana, Kiwi";
     let part2 = str.substr(-4);
     document.getElementById("demo6").innerHTML = part2;
+
+    let text = "Please visit Microsoft!";
+    let newText = text.slice(7, 22);
+    document.getElementById("demo7").innerHTML = newText;
 
 </script>
 
