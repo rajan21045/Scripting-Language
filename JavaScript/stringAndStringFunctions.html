@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String And String Functions</title>
 </head>
+
 <body>
-    
+
+    <p id="demo">Hello, I Am Rajan Poudel</p>
+    <p>The length of the string is: <span id="length"></span></p>
+    <p>The Char At 7 Of String "Hello, I Am Rajan Poudel" Is <span id="demo1"></span></p>
+    <p>The Char Code At 7 Of String "Hello, I Am Rajan Poudel" Is <span id="demo2"></span></p>
+
 </body>
+
+<script>
+    let str = document.getElementById("demo").innerHTML;
+    let len = str.length;
+    document.getElementById("length").innerHTML = len;
+    document.getElementById("demo1").innerHTML = str.charAt(7);
+    document.getElementById("demo2").innerHTML = str.charCodeAt(7);
+</script>
+
 </html>
