@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+
+<body>
+    <h2>Palindrome Checker</h2>
+
+    <form>
+        <label for="pal">Enter The String: </label>
+        <input type="text" id="pal" name="pal" placeholder="Enter String Here"><br><br>         
+        <button type="button" onclick="palin()">Check Palindrome</button>&nbsp;
+        <button type="reset">Clear</button>
+    </form>
+    <br>
+    
+    <span id="result"></span>
+</body>
+
+<script>
+    function palin() {
+        let str = document.getElementById("pal").value;
+        // let rev = str.split('').reverse().join('');
+        // if (str == rev) {
+        //     document.getElementById("result").innerHTML = str + " is a Palindrome";
+        // } else {
+        //     document.getElementById("result").innerHTML = str + " is not a Palindrome";
+        // }
+
+        let rev = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+            // rev += str[i]; 
+            rev = rev + str.charAt(i);
+        }
+        if (str == rev) {
+            document.getElementById("result").innerHTML = str + " is a Palindrome";
+        } else {
+            document.getElementById("result").innerHTML = str + " is not a Palindrome";
+        }
+    }
+</script>
+
+</html>
