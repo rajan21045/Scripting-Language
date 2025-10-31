@@ -22,7 +22,10 @@
                 alert("Name Cannot Be Empty. Please Enter Your Name");
                 errorno++;
             }
-            
+            if(!phonepattern.test(s_phone)){
+                alert("Phone Number Is Not Valid. Please Enter Valid Phone Number");
+                errorno++;
+            }
         }
     </script>
 </body>
