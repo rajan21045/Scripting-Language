@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Validation</title>
+</head>
+<body>
+    <script>
+        function validateform(){
+            var s_name = document.getElementById("sname").value;
+            var s_phone = document.getElementById("sphone").value;
+           var s_email = document.getElementById("semail").value;
+            var s_dob = document.getElementById("sdob").value;
+
+            var errorno =0;;
+            var phonepattern = /^\d{10,15}$/;
+            var emailpattern = /^\w+\@(w+\.)+\w+$/;
+            var datepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+
+            if(s_name.trim()==""){
+                alert("Name Cannot Be Empty. Please Enter Your Name");
+                errorno++;
+            }
+            
+        }
+    </script>
+</body>
+</html>
