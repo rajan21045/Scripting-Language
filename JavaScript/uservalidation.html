@@ -26,7 +26,27 @@
                 alert("Phone Number Is Not Valid. Please Enter Valid Phone Number");
                 errorno++;
             }
+
+            if(!emailpattern.test(s_email)){
+                alert("Email Is Not Valid. Please Enter Valid Email Address");
+                errorno++;
+            }
+            if(!datepattern.test(s_dob)){
+                alert("Date Of Birth Is Not Valid. Please Enter Valid Date Of Birth");
+                errorno++;
+            }
+            if(errorno ==0){
+                return true;
+            }else{
+                return false;
+            }
         }
     </script>
+    <form onsubmit="return validateform()">
+        Name: <input type="text" id="sname" name="sname"><br><br>
+        Phone: <input type="text" id="sphone" name="sphone"><br><br>
+        Email: <input type="text" id="semail" name="semail"><br><br>
+        Date of Birth: <input type="text" id="sdob" name="sdob" placeholder="DD-MM-YYYY"><br><br>
+        <input type="submit" value="Submit">
 </body>
 </html>
