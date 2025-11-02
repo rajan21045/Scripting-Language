@@ -1,52 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Validation</title>
+<html>
+<head> <title>user validation</title>
+<script type="text/javascript">
+   function validateform()
+   {
+    var errorno = 0;
+    var s_name = document.getElementById("sname").value;
+    var s_phone = document.getElementById("sphone").value;
+    var s_email = document.getElementById("semail").value;
+    var s_dob = document.getElementById("sdob").value;
+
+    var phonepattern = /^\d{10,15}$/;
+    var emailpattern = /^\w+\@(\w+\.)+\w+$/;
+    var datepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+
+    if(s_name.trim()=="")
+    {
+        alert("enter student name please");
+        errorno++;
+    }
+    if(!phonepattern.test(s_phone))
+    {
+        alert("enter valid phone number");
+        errorno++;
+    }
+    if(!emailpattern.test(s_email))
+    {
+        alert("enter valid email id");
+        errorno++;
+    }
+    if(!datepattern.test(s_dob))
+    {
+        alert("enter valid date of birth");
+        errorno++;
+    }
+
+    if(errorno==0)
+    return true;
+    else
+    return false;
+
+   }
+</script>
+
 </head>
+
 <body>
-    <script>
-        function validateform(){
-            var s_name = document.getElementById("sname").value;
-            var s_phone = document.getElementById("sphone").value;
-           var s_email = document.getElementById("semail").value;
-            var s_dob = document.getElementById("sdob").value;
-
-            var errorno =0;;
-            var phonepattern = /^\d{10,15}$/;
-            var emailpattern = /^\w+\@(w+\.)+\w+$/;
-            var datepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
-
-            if(s_name.trim()==""){
-                alert("Name Cannot Be Empty. Please Enter Your Name");
-                errorno++;
-            }
-            if(!phonepattern.test(s_phone)){
-                alert("Phone Number Is Not Valid. Please Enter Valid Phone Number");
-                errorno++;
-            }
-
-            if(!emailpattern.test(s_email)){
-                alert("Email Is Not Valid. Please Enter Valid Email Address");
-                errorno++;
-            }
-            if(!datepattern.test(s_dob)){
-                alert("Date Of Birth Is Not Valid. Please Enter Valid Date Of Birth");
-                errorno++;
-            }
-            if(errorno ==0){
-                return true;
-            }else{
-                return false;
-            }
-        }
-    </script>
-    <form onsubmit="return validateform()">
-        Name: <input type="text" id="sname" name="sname"><br><br>
-        Phone: <input type="text" id="sphone" name="sphone"><br><br>
-        Email: <input type="text" id="semail" name="semail"><br><br>
-        Date of Birth: <input type="date" id="sdob" name="sdob"><br><br>
-        <input type="submit" value="Submit">
+    <div style="border-color:brown; border-radius: 10px; border-style: solid;
+    margin:auto;padding: 20px;text-align:center;width:300px;">
+        <form action="#" method="post" onsubmit="return validateform();">
+            <label>Name :</label>
+            <input type="text" name="stdname" id = "sname" value="" placeholder="Enter student Name" />
+            <br><br>
+            <label>Phone :</label>
+            <input type="tel" name="stdphone" id = "sphone" value="" placeholder="Enter student Phone" />
+            <br><br>
+            <label>email :</label>
+            <input type="email" name="stdemail" id = "semail" value="" placeholder="Enter Email id" />
+            <br><br>
+            <label>DOB :</label>
+            <input type="text" name="stdDOB" id = "sdob" value="" placeholder="dd-mm-yyyy" />
+            <br><br>
+            <input type="submit" name="btn1" value="submit data"  />
+            <input type="reset" name="btn2" value="cancel"  /> 
+        </form>
+    </div>
+    
 </body>
-</html>
+    </html>
