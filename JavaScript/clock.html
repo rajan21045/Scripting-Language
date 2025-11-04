@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>
+<head><title>time</title>
 </head>
 <body>
-    <p id="myclock"></p>
-    <input type="button" value="Start Clock" onclick="clock()">
-</body>
-<script>
-    function clock(){
-        var now = new Date();
-        document.getElementById("myclock").innerText = now.toUTCString();
-        setTimeout(clock, 1000);
-    }
+<p id="myclock"></p>
+<input type="button" onclick="clock();" value="show clock" />
+<script type="text/javascript">
+function clock()
+{
+    var now = new Date();
+    document.getElementById("myclock").innerText = now.toUTCString();
+    setTimeout("clock()",1000);
+}
+
 </script>
+
+</body>
 </html>

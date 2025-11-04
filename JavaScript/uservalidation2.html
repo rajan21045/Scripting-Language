@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Validation 2</title>
+</head>
+<body>
+
+      <div style="border-color:brown; border-radius: 10px; border-style: solid;
+    margin:auto;padding: 20px;width:400px;">
+    <form action="#" method="post" onsubmit="return validateform();">
+        <label for="name">Username: </label>
+        <input type="text" id="name" name="name" placeholder="Enter your username" required charminlength="3" maxlength="30">
+        <br><br>
+        <label for="password">Password: </label>
+        <input type="text" id="password" name="password" placeholder="Enter your password" required>
+        <br><br>
+        <label for="conformpassword">Conform Password: </label>
+        <input type="text" id="conformpassword" name="conformpassword" placeholder="Re-enter your password" required>
+        <br><br>
+        <label for="dob">Date Of Birth</label>
+        <input type="text" id="dob" name="dob" required>
+        <br><br>
+        <label for="phonenumber">Phone Number: </label>
+        <input type="text" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+        <br><br>
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+        <label for="dateofjoining">Date of Joining: </label>
+        <input type="text" id="dateofjoining" name="dateofjoining" required>
+        <br><br>
+        <input type="button" value="submit" >
+        <input type="button" value="cancel">
+    </form>
+</div>
+</body>
+<script type="text/javascript">
+   function validateform()
+   {
+    var errorno = 0;
+    var s_name = document.getElementById("name").value;
+    var s_phone = document.getElementById("phonenumber").value;
+    var s_email = document.getElementById("email").value;
+    var s_dob = document.getElementById("dateofjoining").value;
+
+    var phonepattern = /^\d{10,15}$/;
+    var emailpattern = /^\w+\@(\w+\.)+\w+$/;
+    var datepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+
+    if(s_name.trim()=="")
+    {
+        alert("Enter Student Name Please");
+        errorno++;
+    }
+    if(!phonepattern.test(s_phone))
+    {
+        alert("enter valid phone number");
+        errorno++;
+    }
+    if(!emailpattern.test(s_email))
+    {
+        alert("enter valid email id");
+        errorno++;
+    }
+    if(!datepattern.test(s_dob))
+    {
+        alert("enter valid date of birth");
+        errorno++;
+    }
+
+    if(errorno==0)
+    return true;
+    else
+    return false;
+
+   }
+</script>
+</html>
