@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="#">
+    <input type="button" value="screen info"  onclick="showscreen();">
+   </form> 
+   <p id="avail_height"></p>
+    <p id="avail_width"></p>
+    <p id="screen_height"></p>
+    <p id="screen_width"></p>
+    <p id="pixel_depth"></p>
+    <p id="color_depth"></p>
+    <script type="text/javascript">
+        function showscreen()
+        {
+            document.getElementById("avail_height").innerText="Available Height: " + screen.availHeight;
+            document.getElementById("avail_width").innerText="Available Width: " + screen.availWidth;
+            document.getElementById("screen_height").innerText="Screen Height: " + screen.height;
+            document.getElementById("screen_width").innerText="Screen Width: " + screen.width;
+            document.getElementById("pixel_depth").innerText="Pixel Depth: " + screen.pixelDepth;
+            document.getElementById("color_depth").innerText="Color Depth: " + screen.colorDepth;
+        }
+    </script>
+</body>
+</html>
