@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Checking</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <form action="#" onsubmit="return validateForm();">
+
+            <label for="username">Name:</label>
+            <input type="text" id="username" placeholder="Enter your name">
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password" required>
+            <br><br>
+
+            <label for="confirmpassword">Confirm Password:</label>
+            <input type="password" id="confirmpassword" placeholder="Confirm password">
+            <br><br>
+
+            <label for="sphone">Phone:</label>
+            <input type="tel" id="sphone" placeholder="Enter phone number">
+            <br><br>
+
+            <label for="semail">Email:</label>
+            <input type="email" id="semail" placeholder="Enter email address">
+            <br><br>
+
+            <label for="sdob">DOB:</label>
+            <input type="text" id="sdob" placeholder="dd-mm-yyyy">
+            <br><br>
+
+            <label for="joindate">Date of Joining:</label>
+            <input type="text" id="joindate" placeholder="dd-mm-yyyy">
+            <br><br>
+
+            <input type="submit" value="Submit">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Clear" onclick="clearForm()">
+
+        </form>
+    </div>
+
+    <script type="text/javascript">
+
+        function validateform() {
+            var errorno = 0;
+            var s_name = document.getElementById("username").value;
+            var s_password = document.getElementById("password").value;
+            var s_phone = document.getElementById("sphone").value;
+            var s_email = document.getElementById("semail").value;
+            var s_dob = document.getElementById("sdob").value;
+            var s_joindate = document.getElementById("joindate").value;
+
+            var usernamepattern = /^\w+{3,30}$/;
+            var passwordpattern = /^\w+{3,12}$/;
+            var dateofbirthpattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+            var phonepattern = /^\d{10,15}$/;
+            var emailpattern = /^\w+\@(\w+\.)+\w+$/;
+            var joindatepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+
+            if (s_name.trim() == "") {
+                alert("enter student name please");
+                errorno++;
+            }
+
+            if (!usernamepattern.test(s_name)) {
+                alert("enter the valid name");
+                errorno++;
+            }
+
+            if (!passwordpattern.test(s_password)) {
+                alert("enter the valid password");
+                errorno++;
+            }
+
+            if (!phonepattern.test(s_phone)) {
+                alert("enter the valid phone number");
+                errorno++;
+            }
+
+            if (!emailpattern.test(s_email)) {
+                alert("enter the valid email address");
+                errorno++;
+            }
+
+            if (!datepattern.test(s_dob)) {
+                alert("enter the valid date");
+                errorno++;
+            }
+            if (!joindatepattern.test(s_joindate)) {
+                alert("enter the valid joining date");
+                errorno++;
+            }
+
+            if (errorno == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
